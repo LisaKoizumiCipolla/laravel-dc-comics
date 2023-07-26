@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\HomeController as GuestHomeController;
 use App\Http\Controllers\Guest\ComicController as GuestComicController;
+use App\Http\Controllers\Admin\ComicController as AdminComicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,6 @@ use App\Http\Controllers\Guest\ComicController as GuestComicController;
 
 Route::get('/', [GuestHomeController::class, 'home'])->name('homepage');
 Route::get('/comics', [GuestComicController::class, 'index'])->name('guest.comics.index');
+//Route::resource('admin/comics', AdminComicController::class);
+Route::get('admin/comics', [AdminComicController::class, 'index'])->name('admin.comics.index');
+Route::get('admin/comics/{id}', [AdminComicController::class, 'show'])->name('admin.comics.show');
