@@ -40,7 +40,11 @@
                     <td>{{ $comic->type }}</td>
                     <td>{{ $comic->artists }}</td>
                     <td>{{ $comic->writers }}</td>
-                    <td><a class="btn btn-xs btn-primary" href="{{ route('admin.comics.show', $comic->id) }}">View</a></td>
+                    <td class="">
+                        <a class="btn btn-xs btn-primary m-2" href="{{ route('admin.comics.show', $comic->id) }}">View</a>
+                        <a class="btn btn-xs btn-success m-2" href="">Edit</a>
+                        <a class="btn btn-xs btn-warning m-2" href="">Delete</a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
