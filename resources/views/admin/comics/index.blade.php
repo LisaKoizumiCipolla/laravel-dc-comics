@@ -42,8 +42,12 @@
                     <td>{{ $comic->writers }}</td>
                     <td class="">
                         <a class="btn btn-xs btn-primary m-2" href="{{ route('admin.comics.show', $comic->id) }}">View</a>
-                        <a class="btn btn-xs btn-success m-2" href="">Edit</a>
-                        <a class="btn btn-xs btn-warning m-2" href="">Delete</a>
+                        <a class="btn btn-xs btn-success m-2" href="{{ route('admin.comics.edit', $comic->id) }}">Edit</a>
+                        <form action="{{ route('admin.comics.destroy', $comic->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-xs btn-warning m-2">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
