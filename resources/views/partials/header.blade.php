@@ -6,6 +6,8 @@
         <a class="ms-2" href=" {{ route('admin.comics.index')}} "> Admin Comic List</a>
 
         <a class="ms-2" href=" {{ route('admin.comics.create')}} "> Create comic</a>
+
+        <a class="ms-2" href=" {{ route('homepage')}} "> Home</a>
         
     </nav>
 </header>
