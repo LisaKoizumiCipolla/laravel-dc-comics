@@ -7,9 +7,15 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1>{{ $comic->title }}</h1>
+            <h1 class="text-center">{{ $comic->title }}</h1>
             <div class="">
-                
+            @if(session('updated'))
+                <div class="col-12">
+                    <div class="alert alert-success">
+                        {{ session('updated')}} has been updated succesfully!
+                    </div>
+                </div>
+            @endif
                 <article class="card" >
                     <img src="{{ $comic->thumb }}" class="card-img-top" alt="...">
                         <div class="card-body">

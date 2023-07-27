@@ -8,12 +8,25 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 m-5 text-center">
             <h1>Comics</h1>
-            
         </div>
     </div>
     <div class="row">
+        @if(session('delete'))
+        <div class="col-12">
+            <div class="alert alert-warning">
+                {{ session('delete')}} has been exterminate succesfully!
+            </div>
+        </div>
+        @elseif (session('created'))
+        <div class="col-12">
+            <div class="alert alert-primary">
+                {{ session('created')}} has been created succesfully!
+            </div>
+        </div>
+
+        @endif
         <div class="col-12">
         <table class="table table-striped text-center">
             <thead>

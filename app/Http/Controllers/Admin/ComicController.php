@@ -61,7 +61,7 @@ class ComicController extends Controller
 
         $newComic->save();
 
-        return redirect()->route('admin.comics.show', $newComic->id);
+        return redirect()->route('admin.comics.index')->with('created', $newComic->title);
     }
 
     /**
@@ -120,7 +120,7 @@ class ComicController extends Controller
 
         $comic->update($data);
 
-        return redirect()->route('admin.comics.show', $comic->id);
+        return redirect()->route('admin.comics.show', $comic->id)->with('updated', $comic->title);
     }
 
     /**
@@ -136,6 +136,6 @@ class ComicController extends Controller
 
         $comic->delete();
         
-        return redirect()->route('admin.comics.index');
+        return redirect()->route('admin.comics.index')->with('delete', $comic->title);
     }
 }
